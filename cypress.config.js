@@ -27,7 +27,7 @@ async function setupNodeEvents(on, config) {
   // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
   require('cypress-mochawesome-reporter/plugin')(on);
 
-  //
+  //to run cucumber browsify-cts, refer documentation
   await addCucumberPreprocessorPlugin(on, config);
 
   on(
@@ -113,19 +113,28 @@ module.exports = defineConfig({
 
   defaultCommandTimeout: 6000,
   env: {
+    //if env is passed through command line it will take precedence (--env url="")
     url: "https://rahulshettyacademy.com",
   },
   reporter: 'cypress-mochawesome-reporter',
 
   retries: {
     runMode: 1,
-
+//If test fails it will rerun once
   },
   projectId: "nodpcq",
 
   e2e: {
     setupNodeEvents,
+    //update this pattern for test runner to detect tests
     specPattern: 'cypress/integration/examples/*.js'
-
   },
 });
+//For reports, cucumber html plugin can consume the json file and generate html results
+//1. Get tests results into json file format
+//Refer cypress-cucumber-preprocessor 
+//2. download cucumber-json-formattter exe and paste it in main project directory
+//Now when you run tests json file will be generated
+//3. Install multiple cucumber html reporter (refer document)
+//add meta data in cucumber-html-report.js
+//4. execute cucumber-html-report.js file, command -> node "path"  
