@@ -1,3 +1,5 @@
+#In order to run cucumber setupnodeevents
+#Install cucumber (gherkin) full support extension
 Feature: End to end Ecommerce validation
 @Regression
 Scenario: Ecommerce products delivery
