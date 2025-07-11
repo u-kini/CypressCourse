@@ -25,7 +25,7 @@ When('I add items to Cart and checkout', function () {
     this.cartPage = this.productPage.goToCart()
 })
 
-
+//if we use arrow function, then we can't share states between steps
 When('Validate the total price limit', function () {
     this.cartPage.sumOfProducts().then(function (sum) {
         expect(sum).to.be.lessThan(200000);
