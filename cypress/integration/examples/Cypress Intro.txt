@@ -1,0 +1,26 @@
+Cypress is a front-end automation testing framework designed specifically for modern web applications. 
+It helps developers and testers write tests that run in the browser
+
+What Sets Cypress Apart from Other Automation Tools?
+Cypress intelligently waits for commands and assertions to complete before progressing, eliminating the complexities of asynchronous testing.
+It has the ability to mock http request and response.
+During test execution, Cypress has the ability to capture snapshots of each step, easy for debugging. we can see before and after state. It can also capture video of entire test run.
+
+Technical Stack & Features.
+Cypress is built on Node.js and is available as an npm package.
+Test cases are written in JavaScript/Typescript. 80-90% of the coding can be done with cypress commands.
+
+Selenium Architecture
+[Test Script] → [Selenium Client Library] → [JSON Wire Protocol] → [Browser Driver] → [Browser]
+
+
+Cypress Architecture
+Selenium that execute commands remotely from outside the browser, Cypress runs directly inside the browser.
+
+[Test Script] → [Cypress Runner in Browser] ↔ [Node.js Backend] → [Browser (App + Cypress)]
+
+Cypress Runner: Executes your test code directly in the browser’s JavaScript engine.
+
+Node.js Backend: 
+Cypress’s Node.js backend reads your test instructions, configurations, handles files, plugins, and mocks data, 
+while staying in constant sync with the browser through a WebSocket.

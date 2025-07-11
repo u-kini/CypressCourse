@@ -1,0 +1,6 @@
+Set up cloud sql server through azure portal
+create tables in database
+install cypress-sql-server
+refer plugin doc and register inside setup node events
+pass db config objects
+place commands in e2e.js file
